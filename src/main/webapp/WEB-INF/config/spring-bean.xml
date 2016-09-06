@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:aop="http://www.springframework.org/schema/aop" 
+	xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	   		http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+	   		http://www.springframework.org/schema/context
+	   		http://www.springframework.org/schema/context/spring-context-3.1.xsd
+			http://www.springframework.org/schema/mvc 
+			http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
+			http://www.springframework.org/schema/tx 
+			http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
+			http://www.springframework.org/schema/security 
+			http://www.springframework.org/schema/security/spring-security-3.1.xsd 
+			http://www.springframework.org/schema/aop 
+    		http://www.springframework.org/schema/aop/spring-aop-3.1.xsd">
+       	
+	<import resource="hibernate-config.xml" />
+	<!-- Activates various annotations to be detected in bean classes -->
+	<!-- transaction問題，所以分開已controller及BEAN DAO分開掃-->
+	<!-- 一樣的記憶體 不過Spring-bean跟Spring-mvc存放的位置不一樣，為了達到jdbcTemplate功能-->
+	<!-- 可以用分號(;)隔開，增加scan目錄-->
+	<context:component-scan base-package="phi.bo">
+		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" /> 
+	</context:component-scan>
+	<tx:annotation-driven/>
+	
+	<bean id="captchaProducer" class="com.google.code.kaptcha.impl.DefaultKaptcha">  
+	    <property name="config">  
+	        <bean class="com.google.code.kaptcha.util.Config">  
+	            <constructor-arg type="java.util.Properties">  
+	                <props>
+	                	<prop key="kaptcha.image.width">100</prop>
+	                    <prop key="kaptcha.image.height">50</prop>
+	                    <prop key="kaptcha.noise.impl">com.google.code.kaptcha.impl.NoNoise</prop>
+	                    <prop key="kaptcha.textproducer.char.string">0123456789abcdefghijklmnopqrstuvwxyz</prop>
+	                    <prop key="kaptcha.textproducer.char.length">4</prop>
+	                </props>  
+	            </constructor-arg>  
+	        </bean>  
+	    </property>  
+	</bean>  
+	
+	<!-- 實體化上傳用 -->
+	<bean id="multipartResolver"  class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
+</beans>
+

@@ -1,0 +1,136 @@
+$basicColr : #53c3b6 ;
+$menuColr : #fff ;
+$LightBasicColr : #9debe2;
+$darkBlue : #5f6988;
+
+$inti : initial;
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../fonts/fontawesome-webfont.eot?v=4.5.0');
+  src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.5.0') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff2?v=4.5.0') format('woff2'), url('../fonts/fontawesome-webfont.woff?v=4.5.0') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.5.0') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.5.0#fontawesomeregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@mixin	transition(){
+	-webkit-transition: all 0.3s ease 0s;
+	     -o-transition: all 0.3s ease 0s;
+	        transition: all 0.3s ease 0s;
+	   -moz-transition: all 0.3s ease ;
+}// @include transition()
+
+
+.clearFix{
+	content: ""; display: block; clear: both
+}
+
+
+// extend
+
+.fl-l{float: left}// @extend .fl-l;
+.fl-r{float: right}// @extend .fl-r;
+.int{height: initial; line-height: inherit;}// @extend .int
+
+
+
+// extend fine
+
+
+
+//header css
+header{
+	&{background: $basicColr; position: relative; height: 60px}
+	
+	&:after{ @extend .clearFix; }
+	a{@include transition()}
+	a:hover{@include transition()}
+
+}
+
+.logoArea img{padding-top: 5px;}
+
+.fnArea{ 
+	&{  padding: 10px 0 0 0}
+	li{display: inline-block;}
+	.navSearchBox{
+		&{text-align: center;@extend .fl-l }
+		form{    margin-right: 1em;}
+		.fieldset {
+			&{font-size: 1em; padding:0 1em; border-radius: 8px; font-family: sans-serif;background: $LightBasicColr;}
+			input{ border: none; ; border-radius: 10px ; padding: .1em .5em; background: none; height: 30px; line-height: 30px}
+			input[type="text"]:focus{border: none;}
+			button{background: transparent;color: $basicColr;font-size: 18px ; border-color: transparent; @extend .int; margin: 0; padding: 0;  content: "\f002" }
+			button:hover{border-color: transparent; color:$darkBlue;}
+	
+		}
+	}
+
+}
+
+.wap-members {
+	&{display: none; font-size: 26px ; padding: 5px 0 0 20px;position: relative; }
+	&>a{ 
+		&{border: 1px solid #fff ; border-radius: 50%;width: 1.5em; height: 1.5em ;display: block; color: #fff; position: relative}
+		&:hover{background: #fff; color: $darkBlue}
+	}
+	.wap-login{
+		&{position: absolute; top:52px;  left: 25px;z-index: 99;
+		font-size: 16px;width: 4em; text-align: left; ; background: #fff; padding: 10px; box-sizing: content-box; border-radius: 10px; display: none; }
+		&:before{width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 0 5px 7px 5px;
+			border-color: transparent transparent #ffffff transparent; content: "" ; display: block; position: absolute ; top : -5px;
+		}
+		li{display: block; margin-bottom: .5em}
+	}
+	
+}
+
+
+
+
+.navbar{ 
+	&{border-radius: inherit; border-color: transparent; width:100%;max-width: 1200px; margin:0px auto;    position: relative;
+    min-height: 50px;}
+}
+
+.navbar-default{
+	&{ background: $basicColr; padding-top: 5px}
+	
+	.navbar-toggle{
+		&{border: none; color: #fff}
+		&:focus{background-color:$inti;}
+		&:hover{color:#fff; background: $darkBlue }
+	}
+	
+	.navbar-nav{
+		& > .active {
+			& > a:hover{background-color: transparent;color: $darkBlue;}
+			
+		}
+		& > li{
+			& > a{color: #fff;font-size: 1.2em}
+			& > a:hover{background-color: transparent;color: $darkBlue;}
+		}
+		
+	}
+}
+
+
+.navbar-default .navbar-nav > .active>a,
+.navbar-default .navbar-nav>.active>a:focus{background-color: transparent; color: #fff;}
+
+
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover{background: transparent;}
+
+
+//header css  fine
+
+
+
+//container-fluid
+
+.container-fluid{ max-width: 1200px; margin: auto}
+
+
+.sliders-event{ max-width: 1200px ; margin: auto;}
