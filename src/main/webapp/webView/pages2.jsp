@@ -329,15 +329,15 @@
                 <p>已是公會會員，請輸入帳號密碼</p>
                 <hr>
                 <label>帳號</label>
-                <input id="user-email" placeholder="Email" type="email" size="50">
+                <input id="username" placeholder="Username" type="text" size="50">
                 <label>密碼</label>
-                <input id="user-email" placeholder="Email" type="email" size="50">
+                <input id="password" placeholder="Password" type="text" size="50">
                 <dl>
-					<dt><img src="/kaptcha.jpg"></dt>
-					<dd><em></em><input id="verify" placeholder="請輸入驗證碼" type="text" size="50"></dd>
+					<dt><img src="/kaptcha.jpg" alt="點擊更換圖片" id="kaptcha"></dt>
+					<dd><em></em><input id="verify" placeholder="請輸入驗證碼" type="text" size="50" maxlength="4"></dd>
 				</dl>
                 <span class="">忘記密碼?請洽公會服務專線:+886-2-2351-5071</span>
-                <input class="sumbit" name="commit" type="sumbit" value="確認送出">
+                <input class="sumbit" name="commit" type="text" value="確認送出" style="cursor: pointer;">
                 <span class=""> 還不是會員，如何加入？<br>請洽公會服務專線:+886-2-2351-5071</span>
             </div>
         </div>
@@ -350,14 +350,95 @@
 	
 	
 	<script>
-	$(document).ready(function () {
+	$(function () {
 		//lightBox for login
 		$(".inline").colorbox({inline:true, width:"90%"});
-	})
+		checkLogin();
+	});
+	
+	var errorCode = null;
+	var errorMsg = null;
+	var jsonObj = null;
+	
+	function checkLogin(){
+		$.ajax({
+		    type: "POST",
+		    url: "/controller/view/login",
+		    dataType: "json",
+		    cache: false,
+		    async: false,
+		    success: function(memberInfo){
+		    	if(memberInfo.code == 200){
+		    		loginHidden();
+		    	}
+		    },
+		    error: function (xhr, ajaxOptions, thrownError){      
+		    }
+		});
+	}
+	
+	function loginHidden(){
+		$("#cboxClose").click();
+		var memberLength = $('.headerDiv .members li').length;
+   		for(var i = 1; i <= memberLength - 1; i++)
+   			$('.headerDiv .members li:eq('+ i +')').hide();
+	}
+	
+	$('.login .sumbit').click(function(){
+		var member = new Object();
+		member.account = $("#username").val();
+		member.password = $("#password").val();
+		member.validateCode = $("#verify").val();
+		
+		jsonObj = JSON.stringify(member);
+		var result = memberLogin();
+		if(result.code == 200){
+			loginHidden();
+			alert("登入成功");
+		}else if(result.code == 400){
+			alert(result.result);
+		}
+	});
+	
+	$('#kaptcha').click(function(){
+		$.ajax({
+			  type: "POST",
+			  async: false,
+			  url: "/kaptcha.jpg",
+			  success: function(data) {
+				  $("#kaptcha").attr('src', '/kaptcha.jpg');
+			  }, 
+			  error: function(request,error){
+				  errorCode = 400;
+				  errorMsg = "更換圖片失敗";
+				  result = errorObj();
+			  }
+		});
+	});
+	
+	function memberLogin(){		
+		var result = null;		
+		$.ajax({
+			  type: "POST",
+			  async: false,
+			  url: "/Tba/Api/Login",
+			  data: jsonObj,
+			  contentType: 'application/json',
+			  dataType: 'json',
+			  success: function(data) {
+				  result = data;
+			  }, 
+			  error: function(request,error){
+				  errorCode = 400;
+				  errorMsg = "呼叫登入接口失敗";
+				  result = errorObj();
+			  }
+		});
+		return result;
+	}
+	
 	//payment
 	
-	
-
 	//pop視窗 for 倒數
 
 	$("#btnPopup").on("click", function(){
