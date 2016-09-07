@@ -34,7 +34,7 @@
 <body>
 	<header>
 		<div class="headerDiv">
-			<div class="logoArea"><a href="#"><img src="/webView/assets/imgs/logo.gif"></a></div>
+			<div class="logoArea"><a href="http://tba.phimedia.tv/"><img src="/webView/assets/imgs/logo.gif"></a></div>
 			<nav>
 				<ul class="navMenu" style="display: none">
 					<li><a href="#" class="dropdown-link" id="psclass"><i class="fa fa-bars" aria-hidden="true"></i> 課程專屬</a> </li>
@@ -91,7 +91,11 @@
 				<div id="sticker" class="rwd-video ">
 					<div class="videoWrapper">
 						 
-						<iframe width="560" height="315" src="http://video-edit.phimedia.tv/index_embed_tba.php?layout=Y&src=http://pgd.waaarp.com/tbax/MMl6R0KO44U/1f1f3054-471c-442c-94ae-1424a28f0248_240p_500k.mp4&title=股東會決議之法律問題及實務爭議案例" frameborder="0" allowfullscreen></iframe></div>
+						<iframe width="560" height="315" src="http://video-edit.phimedia.tv/index_embed_tba.php?layout=Y&src=http://pgd.waaarp.com/tbax/MMl6R0KO44U/1f1f3054-471c-442c-94ae-1424a28f0248_240p_500k.mp4&title=股東會決議之法律問題及實務爭議案例" frameborder="0" allowfullscreen></iframe>
+						
+						<div class="coverImg" style="cursor: pointer;"><img src="/webView/assets/imgs/cover.jpg"></div>
+						
+					</div>
 						 
 				</div>
 				<div id="stickerAnk"></div>
@@ -104,25 +108,25 @@
 	</div>	
 	 
 	<div class="container row">
-		<div class="fl-l" id="bl1">	
+		<div id="bl1">	
 			<div class="class-info ">
 				<div class="txtinfo fl-l span8of12">
 					<p>上市(櫃)公司董事、監察人進修專業</p>
 					<h3>股東會決議之法律問題及實務爭議案例</h3>
-					<span>開課日期：2016-04-30｜187 人學習過</span>
+					<span>開課日期：2016-04-30</span>
 					<span>課程長度：3小時</span>
 				</div>
 				<div class="extraFN fl-r span4of12">
 					<ul>
 						<li>
-							<div class="faFNs">
+							<div class="faFNs"  style="display: none">
 								<a href="javascript:void(0)" id="heart"><i class="fa fa-heart" aria-hidden="true"></i></a>
 								<span><em id="favNum">0</em> <em id="favIt">喜愛</em></span>
 							</div>
 						</li>
 						<li>
 						<!-- 付費三總狀態 -->
-							 <div class="payment hidden">
+							 <div class="payment ">
 								<span>課程費用</span>
 								<em>免費</em>
 							</div>
@@ -131,7 +135,7 @@
 								<em><i>NT</i>1400</em>
 								<span>已繳費</span>
 							</div>
-							<div class="payment pnot">
+							<div class="payment pnot hidden">
 								<span>課程費用</span>
 								<em><i>NT</i>1400</em>
 								<span>未繳費</span>
@@ -150,10 +154,10 @@
 				    <div class="positionFix">
 					    <ul class="nav-schedule">
 							<li class="active"><a href="#taba"><h4 class="highlight" title="介紹" >介紹</h4> </a></li>
-							<li class=""><a href="#tabb"><h4 class="highlight"  title="章節" >章節</h4> </a></li>
-							<li class=""><a href="#tabc"><h4 class="highlight"  title="下載" >下載</h4> </a></li>
-							<li class=""><a href="#tabd"><h4 class="highlight"  title="問券" >問券</h4> </a></li>
-							<li class=""><a href="#tabe" id="ankClick"><h4 class="highlight"  title="筆記" >上課筆記</h4> </a></li>
+							<!-- <li class=""><a href="#tabb"><h4 class="highlight"  title="章節" >章節</h4> </a></li> -->
+							<!-- <li class=""><a href="#tabc"><h4 class="highlight"  title="下載" >下載</h4> </a></li> -->
+							<li class=""><a href="#tabd"><h4 class="highlight"  title="問券" >問卷</h4> </a></li>
+							<!--<li class=""><a href="#tabe" id="ankClick"><h4 class="highlight"  title="筆記" >上課筆記</h4> </a></li>-->
 						</ul>
 			    	</div>
 			    </div>
@@ -180,8 +184,8 @@
 						<!-- <a href="javascript:void(0)" class="" id="btnPopup">章節</a> -->
 						<ul class="chapter">
 							<li> <a href="#"><i>播放中</i><h6> 01 序言</h6></a></li>
-							<li> <a href="#"><i class="fa fa-play-circle" aria-hidden="true"></i><h6>02 動產商品</h6></a></li>
-							<li> <a href="#"><i class="fa fa-lock" aria-hidden="true"></i></i><h6>02 動產商品</h6></</li>
+							<li> <a href="#"> <i class="fa fa-play-circle" aria-hidden="true"></i><h6>02 動產商品</h6></a></li>
+							<li> <a href="#"><i class="fa fa-lock" aria-hidden="true"></i><h6>02 動產商品</h6></a></li>
 						</ul>
 					</div>
 					<!-- 下載列表-->	
@@ -190,7 +194,7 @@
 					</div>
 					
 					<div id="tabd" class="block-wrapper ">
-						<a href="http://goo.gl/QhUdYn" target="_blank">在職進修線上影音教學平台 - 課程試讀體驗回饋</a>
+						<a href="http://goo.gl/QhUdYn" target="_blank">填問卷拿積分</a>
 					</div>
 					<div id="tabe" class="notes-wrapper ">
 						<div class="notes">
@@ -202,25 +206,27 @@
 				
 				
 				
-				<div class="row tit">
+				<div class="row tit"  style="display: none">
 					<h6>最新上架</h6>
 				</div>
-				<div>
+				<div class="row" style="display: none">
 					<div class="new-3in1">
 						<div class=" span1of3">
 							
 							<div class="infoBox">
 								<div class="imgBox">
+									<a href="#">
 									<img src="/webView/assets/imgs/160x90.jpg">
 									<div class="playBtnDiv">
-										<a href="#">
+										<div>
 											<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 												 width="45.125px" height="44.125px" viewBox="0 0 45.125 44.125" enable-background="new 0 0 45.125 44.125" xml:space="preserve">
 												<circle fill="none" stroke="#FFFFFF" stroke-miterlimit="10" cx="22.625" cy="21.75" r="20.949"  class="svgLineColor"/>
 												<polygon fill="none" stroke="#FFFFFF" stroke-miterlimit="10" points="17.625,11.574 17.625,31.926 34.286,21.75 " class="svgLineColor"/>
 											</svg>
-										</a>
+										</div>
 									</div>
+									</a>
 								</div>
 								<div class="txtinfo">
 									<h3>法務部律師管理系統. 如何選任律師並保障您的權益</h3>
@@ -237,16 +243,18 @@
 							
 							<div class="infoBox">
 								<div class="imgBox">
+									<a href="#">
 									<img src="/webView/assets/imgs/160x90.jpg">
 									<div class="playBtnDiv">
-										<a href="#">
+										<div>
 											<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 												 width="45.125px" height="44.125px" viewBox="0 0 45.125 44.125" enable-background="new 0 0 45.125 44.125" xml:space="preserve">
 												<circle fill="none" stroke="#FFFFFF" stroke-miterlimit="10" cx="22.625" cy="21.75" r="20.949"  class="svgLineColor"/>
 												<polygon fill="none" stroke="#FFFFFF" stroke-miterlimit="10" points="17.625,11.574 17.625,31.926 34.286,21.75 " class="svgLineColor"/>
 											</svg>
-										</a>
+										</div>
 									</div>
+									</a>
 								</div>
 								<div class="txtinfo">
 									<h3>法務部律師管理系統. 如何選任律師並保障您的權益</h3>
@@ -262,16 +270,18 @@
 							
 							<div class="infoBox">
 								<div class="imgBox">
+									<a href="#">
 									<img src="/webView/assets/imgs/160x90.jpg">
 									<div class="playBtnDiv">
-										<a href="#">
+										<div>
 											<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 												 width="45.125px" height="44.125px" viewBox="0 0 45.125 44.125" enable-background="new 0 0 45.125 44.125" xml:space="preserve">
 												<circle fill="none" stroke="#FFFFFF" stroke-miterlimit="10" cx="22.625" cy="21.75" r="20.949"  class="svgLineColor"/>
 												<polygon fill="none" stroke="#FFFFFF" stroke-miterlimit="10" points="17.625,11.574 17.625,31.926 34.286,21.75 " class="svgLineColor"/>
 											</svg>
-										</a>
+										</div>
 									</div>
+									</a>
 								</div>
 								<div class="txtinfo">
 									<h3>法務部律師管理系統. 如何選任律師並保障您的權益</h3>
@@ -305,11 +315,11 @@
 		<div class="footerDiv">
 			<div class="section group">
 				<div class="col span5of8">
-				<p>© 2010 Taipei Bar Association. All rights reserved. <em>版權所有 台北律師公會</em> <br>
+				<p>© 2016 Taipei Bar Association. All rights reserved. <em>版權所有 台北律師公會</em> <br>
 <em>地址：台北市羅斯福路一段 7 號 9 樓</em> <em>TEL：+886-2-2351-5071</em><em> FAX：+886-2-2391-3895</em></p>
 				</div>
 				<div class="col span3of8">
-					<span><a href="http://www.tba.org.tw/">官方網站 </a></span><span> | </span><span><a href="https://www.facebook.com/TaipeiBar"> <i class="fa fa-facebook" aria-hidden="true"></i></a><span>
+					<span><a href="http://www.tba.org.tw/" target="_blank">官方網站 </a></span><span> | </span><span><a href="https://www.facebook.com/TaipeiBar"target="_blank"> <i class="fa fa-facebook" aria-hidden="true"></i></a><span>
 				</div>
 			</div>
 
@@ -359,6 +369,7 @@
 	var errorCode = null;
 	var errorMsg = null;
 	var jsonObj = null;
+	var loginVal = null;
 	
 	function checkLogin(){
 		$.ajax({
@@ -371,14 +382,19 @@
 		    	if(memberInfo.code == 200){
 		    		loginHidden();
 		    	}
+		    	loginVal = memberInfo.code;
 		    },
 		    error: function (xhr, ajaxOptions, thrownError){      
+		    	loginVal = 400;
 		    }
 		});
+		return loginVal;
 	}
 	
 	function loginHidden(){
 		$("#cboxClose").click();
+		$(".coverImg").hide();
+		$(".wap-members.fl-l").hide();
 		var memberLength = $('.headerDiv .members li').length;
    		for(var i = 1; i <= memberLength - 1; i++)
    			$('.headerDiv .members li:eq('+ i +')').hide();
@@ -397,6 +413,14 @@
 			alert("登入成功");
 		}else if(result.code == 400){
 			alert(result.result);
+		}
+	});
+	
+	$('body').on('click','.coverImg',function(){
+		var memberLoginCode = checkLogin();
+		console.log(memberLoginCode);
+		if(memberLoginCode == 400){
+			$('.cboxElement').click();
 		}
 	});
 	

@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 
 @Controller
-public class IndexController {
+public class EventController {
 	
-	@RequestMapping({"/index", "/"})
-	public String about(Model model, HttpServletResponse response) throws Exception {
-		return "/webView/index";
+	@RequestMapping({"/event"})
+	public String event(Model model, HttpServletResponse response) throws Exception {
+		return "/webView/event";
 	}
 	
 }

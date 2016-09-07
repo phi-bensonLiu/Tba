@@ -34,7 +34,9 @@
 <body>
 	<header>
 		<div class="headerDiv">
-			<div class="logoArea"><a href="#"><img src="/webView/assets/imgs/logo.gif"></a></div>
+			
+			<div class="logoArea"><a href="http://tba.phimedia.tv/"><img src="/webView/assets/imgs/logo.gif"></a></div>
+			
 			<nav>
 				<ul class="navMenu" style="display: none">
 					<li><a href="#" class="dropdown-link" id="psclass"><i class="fa fa-bars" aria-hidden="true"></i> 課程專屬</a> </li>
@@ -75,7 +77,7 @@
 			        </div>
                 </li>
 
-                <li><a href="#">加入</a></li>
+                <li><a href="#" style="display: none">加入</a></li>
 
                 <li><a class='inline' href="#inline_content">登入會員</a></li>
                 
@@ -87,10 +89,11 @@
 	<div class="row sliders-event">				
 		<ul class="bxslider" id="slideshow-list">
 			
-			<li><a href="#"><img src="/webView/assets/imgs/a.jpg"> </a></li>
-			<li><a href="#"><img src="/webView/assets/imgs/a.jpg"> </a></li>
-			<li><a href="#"><img src="/webView/assets/imgs/a.jpg"> </a></li>
-			<li><a href="#"><img src="/webView/assets/imgs/a.jpg"> </a></li>
+			<li><a href="./event" target="_blank"><img src="/webView/assets/imgs/AD0001.jpg"> </a></li>
+			<li><a href="javascript:void(0)" target="_blank"><img src="/webView/assets/imgs/AD0002.jpg"> </a></li>
+			<li><a href="javascript:void(0)"><img src="/webView/assets/imgs/AD0003.jpg"> </a></li>
+			<li><a href="javascript:void(0)"><img src="/webView/assets/imgs/AD0004.jpg"> </a></li>
+			<li><a href="javascript:void(0)"><img src="/webView/assets/imgs/AD0005.jpg"> </a></li>
 			
 		</ul>
 	</div>	
@@ -104,23 +107,25 @@
 			  
 				<div class="infoBox">
 					<div class="imgBox">
-						<img src="/webView/assets/imgs/160x90.jpg">
+						<a href="/vod1">
+						<img src="/webView/assets/imgs/cover_0001.jpg">
 						<div class="playBtnDiv">
-							<a href="/vod1">
+							<div>
 								<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 									 width="45.125px" height="44.125px" viewBox="0 0 45.125 44.125" enable-background="new 0 0 45.125 44.125" xml:space="preserve">
 									<circle fill="none" stroke="#FFFFFF" stroke-miterlimit="10" cx="22.625" cy="21.75" r="20.949"  class="svgLineColor"/>
 									<polygon fill="none" stroke="#FFFFFF" stroke-miterlimit="10" points="17.625,11.574 17.625,31.926 34.286,21.75 " class="svgLineColor"/>
 								</svg>
-							</a>
+							</div>
 						</div>
+						</a>
 					</div>
 					
 					<div class="txtinfo">
 						<h3><a href="/vod1">股東會決議之法律問題及實務爭議案例</a></h3>
 						<h6>邵慶平教授</h6>
 						<span>開課日期：2016-04-30</span>
-						<span>系列課程<em>NT1200</em>起</span>
+						
 						
 					</div>
 				</div>
@@ -128,46 +133,50 @@
 			 
 				<div class="infoBox">
 					<div class="imgBox">
-						<img src="/webView/assets/imgs/160x90.jpg">
+						<a href="/vod2">
+						<img src="/webView/assets/imgs/cover_0002.jpg">
 						<div class="playBtnDiv">
-							<a href="/vod2">
+							<div>
 								<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 									 width="45.125px" height="44.125px" viewBox="0 0 45.125 44.125" enable-background="new 0 0 45.125 44.125" xml:space="preserve">
 									<circle fill="none" stroke="#FFFFFF" stroke-miterlimit="10" cx="22.625" cy="21.75" r="20.949"  class="svgLineColor"/>
 									<polygon fill="none" stroke="#FFFFFF" stroke-miterlimit="10" points="17.625,11.574 17.625,31.926 34.286,21.75 " class="svgLineColor"/>
 								</svg>
-							</a>
+							</div>
 						</div>
+						</a>
 					</div>
 					
 					<div class="txtinfo">
 						<h3><a href="/vod2">建物瑕疵之侵權責任 ——商品自傷的損害賠償</a></h3>
 						<h6>邵慶平教授</h6>
 						<span>開課日期：2016-05-19</span>
-						<span>系列課程<em>NT1200</em>起</span>
+						
 						
 					</div>
 				</div>
 				
 				<div class="infoBox" style="display: none">
 					<div class="imgBox">
+						<a href="pages2.html">
 						<img src="/webView/assets/imgs/160x90.jpg">
 						<div class="playBtnDiv">
-							<a href="pages2.html">
+							
 								<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 									 width="45.125px" height="44.125px" viewBox="0 0 45.125 44.125" enable-background="new 0 0 45.125 44.125" xml:space="preserve">
 									<circle fill="none" stroke="#FFFFFF" stroke-miterlimit="10" cx="22.625" cy="21.75" r="20.949"  class="svgLineColor"/>
 									<polygon fill="none" stroke="#FFFFFF" stroke-miterlimit="10" points="17.625,11.574 17.625,31.926 34.286,21.75 " class="svgLineColor"/>
 								</svg>
-							</a>
+							
 						</div>
+						</a>
 					</div>
 					
 					<div class="txtinfo">
 						<h3>法務部律師管理系統. 如何選任律師並保障您的權益</h3>
 						<h6>邵慶平教授</h6>
 						<span>開課日期：2016-08-01</span>
-						<span>系列課程<em>NT1200</em>起</span>
+						
 						
 					</div>
 				</div>
@@ -183,7 +192,7 @@
 				<div class=" span1of3">
 					<div class="teacherBox">
 						<div class="imgBox"><img src="/webView/assets/imgs/teacher1.jpg"></div>
-						<dvi class="infoTxt">
+						<dvi class="infoTxt txtCnt">
 							<p>邵慶平 教授</p>
  
 						</dvi>
@@ -193,7 +202,7 @@
 				<div class=" span1of3">
 					<div class="teacherBox">
 						<div class="imgBox"><img src="/webView/assets/imgs/teacher2.jpg"></div>
-						<dvi class="infoTxt">
+						<dvi class="infoTxt txtCnt">
 							<p>陳聰富 教授</p>
  
 						</dvi>
@@ -203,7 +212,7 @@
 				<div class=" span1of3">
 					<div class="teacherBox">
 						<div class="imgBox"><img src="/webView/assets/imgs/teacher3.jpg"></div>
-						<dvi class="infoTxt">
+						<dvi class="infoTxt txtCnt">
 							<p>林明昕 教授</p>
  
 						</dvi>
@@ -213,7 +222,7 @@
 				<div class=" span1of3">
 					<div class="teacherBox">
 						<div class="imgBox"><img src="/webView/assets/imgs/teacher4.jpg"></div>
-						<dvi class="infoTxt">
+						<dvi class="infoTxt txtCnt">
 							<p>劉素吟 律師</p>
  
 						</dvi>
@@ -224,7 +233,7 @@
 				<div class=" span1of3">
 					<div class="teacherBox">
 						<div class="imgBox"><img src="/webView/assets/imgs/teacher5.jpg"></div>
-						<dvi class="infoTxt">
+						<dvi class="infoTxt txtCnt">
 							<p>許士宦 教授</p>
  
 						</dvi>
@@ -234,7 +243,7 @@
 				<div class=" span1of3">
 					<div class="teacherBox">
 						<div class="imgBox"><img src="/webView/assets/imgs/teacher6.jpg"></div>
-						<dvi class="infoTxt">
+						<dvi class="infoTxt txtCnt">
 							<p>蘇錦霞 律師</p>
  
 						</dvi>
@@ -250,11 +259,11 @@
 		<div class="footerDiv">
 			<div class="section group">
 				<div class="col span5of8">
-				<p>© 2010 Taipei Bar Association. All rights reserved. <em>版權所有 台北律師公會</em> <br>
+				<p>© 2016 Taipei Bar Association. All rights reserved. <em>版權所有 台北律師公會</em> <br>
 <em>地址：台北市羅斯福路一段 7 號 9 樓</em> <em>TEL：+886-2-2351-5071</em><em> FAX：+886-2-2391-3895</em></p>
 				</div>
 				<div class="col span3of8">
-					<span><a href="http://www.tba.org.tw/">官方網站 </a></span><span> | </span><span><a href="https://www.facebook.com/TaipeiBar"> <i class="fa fa-facebook" aria-hidden="true"></i></a><span>
+					<span><a href="http://www.tba.org.tw/" target="_blank">官方網站 </a></span><span> | </span><span><a href="https://www.facebook.com/TaipeiBar" target="_blank"> <i class="fa fa-facebook" aria-hidden="true"></i></a><span>
 				</div>
 			</div>
 
@@ -321,9 +330,11 @@
 		
 		function loginHidden(){
 			$("#cboxClose").click();
+			$(".coverImg").hide();
+			$(".wap-members.fl-l").hide();
 			var memberLength = $('.headerDiv .members li').length;
-    		for(var i = 1; i <= memberLength - 1; i++)
-    			$('.headerDiv .members li:eq('+ i +')').hide();
+	   		for(var i = 1; i <= memberLength - 1; i++)
+	   			$('.headerDiv .members li:eq('+ i +')').hide();
 		}
 		
 		$('.login .sumbit').click(function(){

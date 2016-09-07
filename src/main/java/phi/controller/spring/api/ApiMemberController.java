@@ -78,7 +78,7 @@ public class ApiMemberController {
 		} catch (Exception e){
 			Log.logError("MemberController memberInfo Error : ", e);
 		}
-		return "/webView/jspInclude/login";
+		return "redirect:/index";
 	}
 }
 
