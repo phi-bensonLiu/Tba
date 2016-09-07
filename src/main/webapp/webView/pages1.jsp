@@ -155,7 +155,7 @@
 					    <ul class="nav-schedule">
 							<li class="active"><a href="#taba"><h4 class="highlight" title="介紹" >介紹</h4> </a></li>
 							<!-- <li class=""><a href="#tabb"><h4 class="highlight"  title="章節" >章節</h4> </a></li> -->
-							<!-- <li class=""><a href="#tabc"><h4 class="highlight"  title="下載" >下載</h4> </a></li> -->
+							 <li class=""><a href="#tabc"><h4 class="highlight"  title="下載" >下載</h4> </a></li>
 							<li class=""><a href="#tabd"><h4 class="highlight"  title="問券" >問卷</h4> </a></li>
 							<!--<li class=""><a href="#tabe" id="ankClick"><h4 class="highlight"  title="筆記" >上課筆記</h4> </a></li>-->
 						</ul>
@@ -190,7 +190,8 @@
 					</div>
 					<!-- 下載列表-->	
 					<div id="tabc" class="block-wrapper ">
-						<a href="javascript:void(0)" class="" id="btnPopup">Launch Popup</a>
+						<!--<a href="javascript:void(0)" class="" id="btnPopup">Launch Popup</a>-->
+						<a href="/webView/download/ppt_a.pptx" target="_blank">20160519_建物瑕疵之侵權責任.pptx</a>
 					</div>
 					
 					<div id="tabd" class="block-wrapper ">

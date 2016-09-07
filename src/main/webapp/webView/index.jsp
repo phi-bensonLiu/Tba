@@ -124,7 +124,7 @@
 					<div class="txtinfo">
 						<h3><a href="/vod1">股東會決議之法律問題及實務爭議案例</a></h3>
 						<h6>邵慶平教授</h6>
-						<span>開課日期：2016-04-30</span>
+						<!-- <span>開課日期：2016-04-30</span>  -->
 						
 						
 					</div>
@@ -149,8 +149,8 @@
 					
 					<div class="txtinfo">
 						<h3><a href="/vod2">建物瑕疵之侵權責任 ——商品自傷的損害賠償</a></h3>
-						<h6>邵慶平教授</h6>
-						<span>開課日期：2016-05-19</span>
+						<h6>陳聰富教授</h6>
+						<!--  <span>開課日期：2016-05-19</span> -->
 						
 						
 					</div>
@@ -174,8 +174,8 @@
 					
 					<div class="txtinfo">
 						<h3>法務部律師管理系統. 如何選任律師並保障您的權益</h3>
-						<h6>邵慶平教授</h6>
-						<span>開課日期：2016-08-01</span>
+						<h6>陳聰富教授</h6>
+						<!-- <span>開課日期：2016-08-01</span>  -->
 						
 						
 					</div>
@@ -209,6 +209,7 @@
 						<div class="clearfix"></div>
 					</div>
 				</div>
+				<!-- 
 				<div class=" span1of3">
 					<div class="teacherBox">
 						<div class="imgBox"><img src="/webView/assets/imgs/teacher3.jpg"></div>
@@ -251,7 +252,7 @@
 					</div>
 				</div>
 				
-				 
+				 -->
 			</div>
 		</div>
 	</div>
