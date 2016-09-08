@@ -12,7 +12,7 @@ public class IndexController {
 	
 	@RequestMapping({"/index", "/"})
 	public String about(Model model, HttpServletResponse response) throws Exception {
-		return "/webView/indexAAAA";
+		return "/webView/index";
 	}
 	
 }
