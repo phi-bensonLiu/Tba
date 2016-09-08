@@ -51,8 +51,8 @@
 		            <div class="wap-login act">
 			            <ul>
 			                <li style="display: none"><a href="#">加入</a></li>
-			                <li><a class='inline' href="#inline_content">登入會員</a></li>
-			                
+			                <li><a class='inline loginMember' href="#inline_content">登入會員</a></li>
+			                <li><a class='logoutMember' style="display: none">登出會員</a></li>
 			            </ul>
 		            </div>
 	            </div>
@@ -79,8 +79,8 @@
 
                 <li><a href="#" style="display: none">加入</a></li>
 
-                <li><a class='inline' href="#inline_content">登入會員</a></li>
-                
+                <li><a class='inline loginMember' href="#inline_content">登入會員</a></li>
+                <li><a class='logoutMember' style="display: none">登出會員</a></li>
             </ul>
  
 		</div>
@@ -311,6 +311,7 @@
 		var errorCode = null;
 		var errorMsg = null;
 		var jsonObj = null;
+		var loginVal = null;
 		
 		function checkLogin(){
 			$.ajax({
@@ -323,20 +324,40 @@
 			    	if(memberInfo.code == 200){
 			    		loginHidden();
 			    	}
+			    	loginVal = memberInfo.code;
 			    },
 			    error: function (xhr, ajaxOptions, thrownError){      
+			    	loginVal = 400;
 			    }
 			});
+			return loginVal;
 		}
 		
 		function loginHidden(){
 			$("#cboxClose").click();
 			$(".coverImg").hide();
-			$(".wap-members.fl-l").hide();
+			$(".headerDiv").find(".loginMember").hide();
+			$(".headerDiv").find(".logoutMember").show().css("cursor", "pointer");
+			/*
 			var memberLength = $('.headerDiv .members li').length;
 	   		for(var i = 1; i <= memberLength - 1; i++)
 	   			$('.headerDiv .members li:eq('+ i +')').hide();
+	   		*/
 		}
+		
+		function loginShow(){
+			$(".coverImg").show();
+			$(".headerDiv").find(".loginMember").show();
+			$(".headerDiv").find(".logoutMember").hide();
+		}
+		
+		$('body').on('click','.logoutMember',function(){
+			loginShow();
+			var result = memberLogout();
+			if(result.code == 200){
+				alert(result.result);
+			}
+		});
 		
 		$('.login .sumbit').click(function(){
 			var member = new Object();
@@ -351,6 +372,13 @@
 				alert("登入成功");
 			}else if(result.code == 400){
 				alert(result.result);
+			}
+		});
+		
+		$('body').on('click','.coverImg',function(){
+			var memberLoginCode = checkLogin();
+			if(memberLoginCode == 400){
+				$('.cboxElement').click();
 			}
 		});
 		
@@ -370,13 +398,33 @@
 			});
 		});
 		
-		
 		function memberLogin(){		
 			var result = null;		
 			$.ajax({
 				  type: "POST",
 				  async: false,
 				  url: "/Tba/Api/Login",
+				  data: jsonObj,
+				  contentType: 'application/json',
+				  dataType: 'json',
+				  success: function(data) {
+					  result = data;
+				  }, 
+				  error: function(request,error){
+					  errorCode = 400;
+					  errorMsg = "呼叫登入接口失敗";
+					  result = errorObj();
+				  }
+			});
+			return result;
+		}
+		
+		function memberLogout(){		
+			var result = null;		
+			$.ajax({
+				  type: "POST",
+				  async: false,
+				  url: "/Tba/Api/Logout",
 				  data: jsonObj,
 				  contentType: 'application/json',
 				  dataType: 'json',

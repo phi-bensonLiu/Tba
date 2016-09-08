@@ -78,7 +78,14 @@ public class ApiMemberController {
 		} catch (Exception e){
 			Log.logError("MemberController memberInfo Error : ", e);
 		}
-		return "redirect:/index";
+		if(cid.equals("")){
+			return "redirect:/index";
+		}else if(cid.equals("1")){
+			return "redirect:/vod1";
+		}else{
+			return "redirect:/vod2";
+		}
+		
 	}
 }
 

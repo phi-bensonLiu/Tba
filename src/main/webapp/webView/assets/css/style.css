@@ -15,7 +15,7 @@
   -o-transition: $transition-property $transition-time $method;
   transition: $transition-property $transition-time $method;
 }*/
-.clearFix, header:after, .login dl:after {
+.clearFix, header:after, #secNav:after, .new-3in1:after, .login dl:after {
   content: "";
   display: block;
   clear: both;
@@ -252,6 +252,27 @@ header a:hover {
   margin-bottom: .5em;
 }
 
+#secNav {
+  background: #6c6c6c;
+  display: none;
+}
+
+#secNav ul {
+  display: block;
+  max-width: 1200px;
+  margin: auto;
+  padding: 1em;
+}
+
+#secNav li {
+  display: inline-block;
+  min-width: 6em;
+}
+
+#secNav a {
+  color: #fff;
+}
+
 .tit {
   text-align: center;
 }
@@ -312,7 +333,7 @@ header a:hover {
   bottom: 10%;
 }
 
-.infoBox .imgBox .playBtnDiv a {
+.infoBox .imgBox a .playBtnDiv  {
   display: block;
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
@@ -320,7 +341,7 @@ header a:hover {
   -moz-transition: all 0.3s ease;
 }
 
-.infoBox .imgBox .playBtnDiv a .svgLineColor {
+.infoBox .imgBox div .svgLineColor {
   stroke: white;
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
@@ -329,7 +350,7 @@ header a:hover {
   fill: rgba(95, 105, 135, 0);
 }
 
-.infoBox .imgBox .playBtnDiv a:hover .svgLineColor {
+.infoBox .imgBox div:hover .svgLineColor {
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
@@ -338,20 +359,14 @@ header a:hover {
   fill: #5f6987;
 }
 
-.infoBox .imgBox .playBtnDiv a:hover {
-  -ms-transform: scale(1.5, 1.5);
-  /* IE 9 */
-  -webkit-transform: scale(1.5, 1.5);
-  /* Safari */
-  transform: scale(1.5, 1.5);
-  /* Standard syntax */
-}
+
 
 .infoBox .txtinfo {
   padding: .5em;
   font-size: 18px;
 }
-
+.infoBox .txtinfo a{ color: #525252}
+.infoBox .txtinfo a:hover{ color:#53c3b6}
 .infoBox .txtinfo h3 {
   font-size: 18px;
   padding: 0px;
@@ -378,7 +393,7 @@ header a:hover {
 .infoBox .txtinfo em {
   font-size: 18px;
   color: red;
-  font-size: 2em;
+  font-size: 1em;
   padding: 0 0.2em;
   font-weight: bold;
   text-align: center;
@@ -404,8 +419,9 @@ header a:hover {
 .teacherBox .imgBox {
   width: 40%;
   box-sizing: border-box;
-  float: left;
+  /*float: left;*/
   padding: 0 0.5em;
+  margin: auto;
 }
 
 .teacherBox .imgBox img {
@@ -416,8 +432,9 @@ header a:hover {
 .teacherBox .infoTxt {
   width: 60%;
   box-sizing: border-box;
-  float: left;
+  /*float: left;*/
   padding: 0 20px;
+  margin: auto;
 }
 
 .teacherBox .infoTxt span {
@@ -431,7 +448,14 @@ header a:hover {
   line-height: 1.7em;
   padding: .5em 0;
   margin: 0;
+  text-align: left;
 }
+
+.infoTxt.txtCnt p{
+	text-align: center;
+}
+
+
 
 footer {
   background: #464646;
@@ -572,6 +596,13 @@ footer {
 .tabContainer .teacherBox .imgBox {
   height: 100px;
   width: 100px;
+  margin: 0;
+  float: left;
+}
+
+.tabContainer .infoTxt {
+  margin: 0;
+  float: left;
 }
 
 .tabContainer .infoTxt p {
@@ -620,6 +651,7 @@ footer {
 
 .new-3in1 > div {
   display: inline-block;
+  float: left;
 }
 
 .new-3in1 img {
@@ -629,8 +661,27 @@ footer {
 .new-3in1 .span1of3 {
   box-sizing: border-box;
   margin-bottom: 1em;
-  padding: .5%;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
   text-align: left;
+  width: 33.33%;
+}
+
+.new-3in1 > div:nth-child(3n+4) {
+  padding-left: 0 !important;
+  padding-right: 40px;
+}
+
+.new-3in1 > div:nth-child(3n+3) {
+  padding-right: 0 !important;
+  padding-left: 40px;
+}
+
+.new-3in1 > div:first-child {
+  padding-left: 0;
+  padding-right: 40px;
 }
 
 .notes-wrapper .notes {
@@ -669,18 +720,18 @@ footer {
 }
 
 .noteNavBar.active {
-  position: fixed;
+  position: absolute;
   bottom: 0;
   display: block;
 }
 
 .noteNavBar input {
-  border: none;
-  border-radius: 0;
   height: 60px;
   line-height: 60px;
   vertical-align: top;
   margin-right: -4px;
+  width: 90%;
+  max-width: 1024px;
 }
 
 .noteNavBar button {
@@ -696,8 +747,6 @@ footer {
 
 .noteNavBar .fnbox {
   width: 100%;
-  max-width: 600px;
-  text-align: right;
 }
 
 /*pop box CSS*/
@@ -843,6 +892,21 @@ footer {
   padding: 0.5em 1em 1em 1em;
   margin: 0 auto;
   max-width: 16em;
+ 
+}
+.login input{ text-align: center;}
+
+.login input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #c9c9c9;
+}
+.login input::-moz-placeholder { /* Firefox 19+ */
+  color: #c9c9c9;
+}
+.login input::-ms-input-placeholder { /* IE 10+ */
+  color: #c9c9c9;
+}
+.login input::-moz-placeholder { /* Firefox 18- */
+  color: #c9c9c9;
 }
 
 .login input[type="email"]::-webkit-input-placeholder {
@@ -915,7 +979,7 @@ footer {
   background: none;
   border-radius: 0;
   font-size: 2em;
-  padding: 1em;
+  /*padding: 1em;*/
   margin: 0 auto 0.5em;
   max-width: 12em;
   font-size: 1.5em;
@@ -924,3 +988,8 @@ footer {
 .login input[type="text"]::-webkit-input-placeholder {
   color: #fff;
 }
+
+
+.coverImg{position: absolute; width: 100% ;height: 100%;
+    margin-top: -25px;}
+.coverImg img{width: 100%; height: 100%;}

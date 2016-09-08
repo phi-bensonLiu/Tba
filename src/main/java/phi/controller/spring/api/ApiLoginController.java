@@ -89,6 +89,19 @@ public class ApiLoginController {
 		}
 		return returnObj;
 	}
+	
+	@RequestMapping(value = {"/Logout"})
+	public @ResponseBody ReturnObj apiLogout(Model model, HttpServletResponse response, HttpServletRequest request) throws Exception {
+		ReturnObj returnObj = new ReturnObj();
+		HttpSession session = request.getSession();  
+		try {
+			session.removeAttribute("memberInfo");
+			returnObj = MessageObj.MsgObj(200, "登出成功");
+		} catch (Exception e){
+			Log.logError("ApiLoginController apiLogin Error : ", e);
+		}
+		return returnObj;
+	}
 }
 
 

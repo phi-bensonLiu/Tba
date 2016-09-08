@@ -49,8 +49,8 @@
 		            <div class="wap-login act">
 			            <ul>
 			                <li style="display: none"><a href="#" >加入</a></li>
-			                <li><a class='inline' href="#inline_content">登入會員</a></li>
-			                
+			                <li><a class='inline loginMember' href="#inline_content">登入會員</a></li>
+			                <li><a class='logoutMember' style="display: none">登出會員</a></li>
 			            </ul>
 		            </div>
 	            </div>
@@ -77,8 +77,8 @@
 
                 <li><a href="#" style="display: none">加入</a></li>
 
-                <li><a class='inline' href="#inline_content">登入會員</a></li>
-                
+                <li><a class='inline loginMember' href="#inline_content">登入會員</a></li>
+                <li><a class='logoutMember' style="display: none">登出會員</a></li>
             </ul>
  
 		</div>
@@ -112,8 +112,8 @@
 				<div class="txtinfo fl-l span8of12">
 					<p>民事法規</p>
 					<h3>建物瑕疵之侵權責任 ——商品自傷的損害賠償</h3>
-					<span>開課日期：2016-05-19</span>
-					<span>課程長度：3小時</span>
+					
+					<span>影片長度：2小時</span>
 				</div>
 				<div class="extraFN fl-r span4of12">
 					<ul>
@@ -154,8 +154,8 @@
 					    <ul class="nav-schedule">
 							<li class="active"><a href="#taba"><h4 class="highlight" title="介紹" >介紹</h4> </a></li>
 							<!-- <li class=""><a href="#tabb"><h4 class="highlight"  title="章節" >章節</h4> </a></li> -->
-							 <li class=""><a href="#tabc"><h4 class="highlight"  title="下載" >下載</h4> </a></li> 
-							<li class=""><a href="#tabd"><h4 class="highlight"  title="問券" >問卷</h4> </a></li>
+							 <li class=""><a href="#tabc"><h4 class="highlight"  title="下載" >講義下載</h4> </a></li> 
+							<li class=""><a href="#tabd"><h4 class="highlight"  title="問卷" >問卷</h4> </a></li>
 							<!--<li class=""><a href="#tabe" id="ankClick"><h4 class="highlight"  title="筆記" >上課筆記</h4> </a></li>-->
 						</ul>
 			    	</div>
@@ -187,15 +187,16 @@
 							<li> <a href="#"><i class="fa fa-lock" aria-hidden="true"></i><h6>02 動產商品</h6></a></li>
 						</ul>-->
 						
-						<a href="/webView/download/ppt_b.pdf" target="_blank">20160430_股東會決議之法律問題及實務.pdf</a>
+						
 					</div>
 					<!-- 下載列表-->	
 					<div id="tabc" class="block-wrapper ">
-						<a href="javascript:void(0)" class="" id="btnPopup">Launch Popup</a>
+						<a href="/webView/download/ppt_b.pdf" target="_blank">20160430_股東會決議之法律問題及實務.pdf</a>
 					</div>
 					
 					<div id="tabd" class="block-wrapper ">
-						<a href="http://goo.gl/QhUdYn" target="_blank">填問卷拿積分</a>
+						<h6>填問卷，就可獲得在職進修時數！</h6>
+						<iframe  src="https://docs.google.com/a/phimedia.tv/forms/d/e/1FAIpQLSfP6vVVQ2np9pO6uAp7ulCEAJMLmxV3iZ2vo-mX-JAfvG70cA/viewform" frameborder="0" style=" min-height: 500px; width: 100%"  allowfullscreen /> </iframe>
 					</div>
 					<div id="tabe" class="notes-wrapper ">
 						<div class="notes">
@@ -397,11 +398,28 @@
 	function loginHidden(){
 		$("#cboxClose").click();
 		$(".coverImg").hide();
-		$(".wap-members.fl-l").hide();
+		$(".headerDiv").find(".loginMember").hide();
+		$(".headerDiv").find(".logoutMember").show().css("cursor", "pointer");
+		/*
 		var memberLength = $('.headerDiv .members li').length;
    		for(var i = 1; i <= memberLength - 1; i++)
    			$('.headerDiv .members li:eq('+ i +')').hide();
+   		*/
 	}
+	
+	function loginShow(){
+		$(".coverImg").show();
+		$(".headerDiv").find(".loginMember").show();
+		$(".headerDiv").find(".logoutMember").hide();
+	}
+	
+	$('body').on('click','.logoutMember',function(){
+		loginShow();
+		var result = memberLogout();
+		if(result.code == 200){
+			alert(result.result);
+		}
+	});	
 	
 	$('.login .sumbit').click(function(){
 		var member = new Object();
@@ -421,7 +439,6 @@
 	
 	$('body').on('click','.coverImg',function(){
 		var memberLoginCode = checkLogin();
-		console.log(memberLoginCode);
 		if(memberLoginCode == 400){
 			$('.cboxElement').click();
 		}
@@ -449,6 +466,27 @@
 			  type: "POST",
 			  async: false,
 			  url: "/Tba/Api/Login",
+			  data: jsonObj,
+			  contentType: 'application/json',
+			  dataType: 'json',
+			  success: function(data) {
+				  result = data;
+			  }, 
+			  error: function(request,error){
+				  errorCode = 400;
+				  errorMsg = "呼叫登入接口失敗";
+				  result = errorObj();
+			  }
+		});
+		return result;
+	}
+	
+	function memberLogout(){		
+		var result = null;		
+		$.ajax({
+			  type: "POST",
+			  async: false,
+			  url: "/Tba/Api/Logout",
 			  data: jsonObj,
 			  contentType: 'application/json',
 			  dataType: 'json',
